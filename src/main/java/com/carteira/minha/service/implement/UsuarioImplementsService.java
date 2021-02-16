@@ -3,6 +3,7 @@ package com.carteira.minha.service.implement;
 import com.carteira.minha.model.Usuario;
 import com.carteira.minha.repository.UsuarioRepository;
 import com.carteira.minha.service.UsuarioService;
+import com.carteira.minha.service.exception.UsuarioException;
 
 import org.springframework.stereotype.Service;
 
@@ -33,5 +34,9 @@ public class UsuarioImplementsService implements UsuarioService{
     @Override
     public void validarEmail(String email){
 
+       
+        if(this.usuarioRepository.existsByEmail(email)){
+            throw new UsuarioException("Email já existe na base de dados");
+        }
     };
 }
