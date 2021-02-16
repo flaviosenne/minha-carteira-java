@@ -1,4 +1,4 @@
-package com.carteira.minha.model;
+package com.carteira.minha.enums;
 
 public enum TipoStatus {
     

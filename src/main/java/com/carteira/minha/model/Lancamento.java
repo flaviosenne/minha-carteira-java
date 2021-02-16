@@ -15,6 +15,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.carteira.minha.enums.TipoLancamento;
+import com.carteira.minha.enums.TipoStatus;
+
 import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
 
 import lombok.Data;
