@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -39,11 +41,13 @@ public class Lancamento {
     private BigDecimal valor;
     
     @Column(name = "tipo")
-    private String tipo;
+    @Enumerated(value = EnumType.STRING)
+    private TipoLancamento tipo;
     
     @Column(name = "status")
-    private String status;
-    
+    @Enumerated(value = EnumType.STRING)
+    private TipoStatus status;
+
     @Column(name = "data_cadastro")
     @Convert(converter = Jsr310JpaConverters.LocalDateConverter.class)
     private LocalDate dataCadastro;
